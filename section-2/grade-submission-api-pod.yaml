@@ -19,3 +19,6 @@ spec:
         cpu: "200m"
     ports:
       - containerPort: 3000
+    env:
+      - name: MONGODB_URI
+        value: mongodb://mongodb:27017/grades
