@@ -20,7 +20,7 @@ spec:
       - name: grade-submission-database
         image: mongo:7
         envFrom:
-          - configMapRef:
+          - secretRef:
               name: grade-submission-secret
         ports:
         - containerPort: 27017
