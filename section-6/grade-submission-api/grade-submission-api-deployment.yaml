@@ -23,7 +23,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: grade-submission-api
-        image: rslim087/kubernetes-course-grade-submission-api:stateless
+        image: rslim087/kubernetes-course-grade-submission-api:stateless-v2
         resources:
           requests:
             memory: "512Mi"
@@ -49,3 +49,8 @@ spec:
           periodSeconds: 5
           timeoutSeconds: 3
           failureThreshold: 2
+        env:
+          - name: MONGODB_HOST
+            value: grade-submission-database
+          - name: MONGODB_PORT
+            value: '27017'
