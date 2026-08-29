@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grade-submission-configmap
+  namespace: grade-submission
+data:
+  MONGODB_HOST: grade-submission-database
+  MONGODB_PORT: '27017'
+  GRADE_SERVICE_HOST: grade-submission-api
