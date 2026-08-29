@@ -19,11 +19,9 @@ spec:
       containers:
       - name: grade-submission-database
         image: mongo:7
-        env:
-          - name: MONGO_INITDB_ROOT_USERNAME
-            value: "admin"
-          - name: MONGO_INITDB_ROOT_PASSWORD
-            value: "password123"
+        envFrom:
+          - configMapRef:
+              name: grade-submission-secret
         ports:
         - containerPort: 27017
         volumeMounts:

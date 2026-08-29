@@ -49,12 +49,8 @@ spec:
           periodSeconds: 5
           timeoutSeconds: 3
           failureThreshold: 2
-        env:
-          - name: MONGODB_HOST
-            value: grade-submission-database
-          - name: MONGODB_PORT
-            value: '27017'
-          - name: MONGODB_USER
-            value: "admin"
-          - name: MONGODB_PASSWORD
-            value: "password123"
+        envFrom:
+          - configMapRef: 
+              name: grade-submission-configmap
+          - secretRef:
+              name: grade-submission-secret
